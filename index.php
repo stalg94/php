@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initital-scale = 1.0">
     <title><?="Uus leht"; ?></title>
-</head>
+</head>  <!-- comment ctrl+/ -->
 <body>
 <?php
+echo "Peamine skript <br>";
 
-echo "Текущая дата и время: ";
-echo "<br>";
-echo  date(DATE_RSS);
+include 'second.php';
+echo "Peamine skript <br>";
 
-echo "<br>"
-?>
-<?php
-if (mt_rand(0,1)){?>
-<div style="color: blue">Синий текст</div>
-    <?php
-}
-else{?>
-<div style="color: red">Красный текст</div>
-<?php
-}
+// $ - знак переменной, нельзя использовать цифру
+
+$asd_asd=5;
+echo $asd_asd;
+
+$asd = $var = $num =3;
+
+
+
+
 ?>
 </body>
 </html>
