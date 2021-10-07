@@ -7,14 +7,28 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-$num=5;
+$user = "Ivan";
 
-echo "Hello world  - \"$num\"";
+if (isset($user)) //позволяет проверить, есть ли какое-то значение  у функции или нет
+    echo "Переменная существует <br>";
+else
+    echo "переменная отсутвует <br>";
+
+$str= "";
+if (empty($str)) // empty проверяет на пустоту какой-то переменной
+    echo "строка пустая <br>";
+else
+    echo "в строке чтото есть <br>";
+
+// как узнать тип переменных:
+echo gettype("wdf");
 echo "<br>";
-echo "Hello world  - {$num} 3";
 
-echo `dir`;
-
+//как узнать, число это или нет:
+if (is_int(12342))
+    echo "See on arv <br>";
+else
+    echo "ei ole arv <br>";
 
 
 
