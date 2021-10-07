@@ -7,37 +7,21 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-$tests = array(
-        "42",
-    1337,
-    0x539,
-    02471,
-    0b10100111001,
-    1337e0,
-    "0x539",
-        "02471",
-    "0b10100111001",
-    "not numeric",
-    array(),
-    9.1,
-    null
-);
+require "point.php";
 
-foreach ($tests as $element) {
-    if (is_numeric($element)){
-        echo var_export($element, true). " - arv", PHP_EOL . "<br>";
-    }    else  {
-        echo  var_export($element, true). " - ei ole arv", PHP_EOL . "<br>";
-    }
-}
-// округление
-echo round(21.23435478932, 2);
+$point1 = new Point;
+$point1->x = 13; //"обращение к элементам данного класса"
+$point1->y = 2;
+echo $point1->x;
+$point2 = new Point;
+$point2->x = 11; //"обращение к элементам данного класса"
+$point2->y = 47;
+echo $point2->x;
 
-echo ceil(4.3); //5
-echo ceil(9.999); //10
+// объект можно самостоятельно удалить при помощи:
+unset($point2);
+//echo $point2->x;
 
-echo floor(4.3); // 4
-echo floor (9.999); //9
 
 ?>
 </body>
