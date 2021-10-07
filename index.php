@@ -7,17 +7,14 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-echo "Peamine skript <br>";
+$num=5;
 
-include 'second.php';
-echo "Peamine skript <br>";
+echo "Hello world  - \"$num\"";
+echo "<br>";
+echo "Hello world  - {$num} 3";
 
-// $ - знак переменной, нельзя использовать цифру
+echo `dir`;
 
-$asd_asd=5;
-echo $asd_asd;
-
-$asd = $var = $num =3;
 
 
 
