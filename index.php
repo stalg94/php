@@ -7,22 +7,23 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-if (define("NUMBER",1)){
-    echo "COnst NUMBER успешно создана!";
-}if (defined("NUMBER")){
-    echo "COnst NUMBER уже создана 4!";
+
+echo "Имя файла " . __FILE__ . "<br>";//каталог и название файла, в котором написан скрипт
+echo  "Строка ". __LINE__ . "<br>"; // показывает номер строки, где произошел ее вызов
+echo "Путь к файлу " . __DIR__ . "<br>"; // показывает абсолютный путь
+//require_once __DIR__. "point.php";
+
+class ConstClass{
+    const NAME = "str"; //в классе константа создается при помощи функции const
 }
+ if (defined("ConstClass::NAME")){
+     echo "Константа определена";
+ }
+ else{
+     echo "не определена!";
+ }
 
-define ("NUMBERS",2);
-echo  constant("NUMBERS");
-//define("NUMBER",1);//запись константы
-//echo NUMBER;
 
-
-$num=mt_rand(1,10);
-$name = "VALUE($num)";
-define($name, $num);
-echo constant($name);
 
 
 ?>
