@@ -7,19 +7,20 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-
-$char = "php";
-
-if ($char == "php"){
-    echo  "<h1>Язык php</h1>";
-} elseif ($char== "js"){
-    echo "язык JS";
-}elseif ($char = "c#"){
-    echo "язык JavaScript";
-}else{
-    echo "Хз какой язык";
+$num=5;
+if ($num >0 && $num<8){
+    echo "0<{$num}<8";
 }
-
+echo "<br>";
+$num1=5;
+if ($num1 >0 || $num1<8){
+    echo "условие сработало";
+}
+echo "<br>";
+$num2=-9;
+if (!($num2 >0)){
+    echo "условие сработало";
+}
 
 ?>
 </body>
