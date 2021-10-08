@@ -7,21 +7,22 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
+echo 4**2; //возведение в степень
+echo "<br>";
+echo 8%3; // остаток от деления
+echo "<br>";
+echo (int) (8/3);
+echo "<br>";
 
-echo "Имя файла " . __FILE__ . "<br>";//каталог и название файла, в котором написан скрипт
-echo  "Строка ". __LINE__ . "<br>"; // показывает номер строки, где произошел ее вызов
-echo "Путь к файлу " . __DIR__ . "<br>"; // показывает абсолютный путь
-//require_once __DIR__. "point.php";
+if (8%2) echo "число не четное";
+else echo "число четное";
+echo  "<br>";
 
-class ConstClass{
-    const NAME = "str"; //в классе константа создается при помощи функции const
-}
- if (defined("ConstClass::NAME")){
-     echo "Константа определена";
- }
- else{
-     echo "не определена!";
- }
+$var = 3;
+echo $var++;
+echo "<br>";
+echo $var;
+
 
 
 
