@@ -7,25 +7,38 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-// тернарный - используется три оператора
-//выражение1 ? выражение2 : выражение3
-//позволяет заменить оператор if при маленьком фрагменте
-
-$n=0;
-finish:
-$x = -450;
-$x= $x < 0 ? -$x : $x;
-echo $x;
-echo "<br>";
-$y = null;
-$y = $y ?? 1;
-echo $y;
-$n++;
-if ($n>6){
-    goto end;
+$char= "php";
+switch ($char) {
+    case "php":
+        echo "<h1>Язык PHP </h1>";
+        break;
+    case "js":
+        echo "<h1>Язык JavaScript </h1>";
+        break;
+    case "c#":
+        echo "<h1>Язык C# </h1>";
+        break;
+    default:
+        echo "<h1>Неизвестный язык!</h1>";
 }
-goto finish;
-end:
+echo "<br>";
+$number = 120;
+switch (true){
+    case ($number > 0 && $number <= 10):
+        echo "$number vähem kui 10 ja rohkem kui 0";
+        break;
+    case ($number > 10 && $number <= 100):
+        echo "$number vähem kui 100 ja rohkem kui 10";
+        break;
+    case ($number > 100 && $number <= 1000):
+        echo "$number vähem kui 1000 ja rohkem kui 100";
+        break;
+    default:
+        echo "Tundmatu arv";
+
+}
+
+
 
 
 
