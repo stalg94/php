@@ -7,24 +7,18 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-//операторы сравнения, возвращают либо true либо false
 
-$x = 1;
-$y = "2";
+$char = "php";
 
-echo $x < $y;
-echo $x <= $y;
-echo $x > $y;
-echo $x >= $y;
-
-echo $x == $y; //сравнение переменных без учета их типа
-echo $x != $y; //не равно
-echo $x <> $y;
-echo $x === $y; //проверяют полностью на равенство переменныъ
-echo $x !== $y;
-
-echo $x <=> $y; //возвращает числовое значение
-
+if ($char == "php"){
+    echo  "<h1>Язык php</h1>";
+} elseif ($char== "js"){
+    echo "язык JS";
+}elseif ($char = "c#"){
+    echo "язык JavaScript";
+}else{
+    echo "Хз какой язык";
+}
 
 
 ?>
