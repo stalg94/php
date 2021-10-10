@@ -7,15 +7,10 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-$str = "Hello world";
-echo $str[0]."<br>";
-$str1 = "Привет мир!";
-echo mb_strlen($str1)."<br>"; // подсчет количества символов
-// вывод строки посимвольно
-for ($i=0; $i < strlen($str); $i++){
-    echo $str[$i]."<br>";
-}
-chr(36)
+$date ="01.01.2021";
+echo "päev ". substr($date,0,2). "<br>";
+echo "kuu ". substr($date,3,2). "<br>";
+echo "aasta ". substr($date,6). "<br>";
 
 
 
