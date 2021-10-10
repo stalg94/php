@@ -7,51 +7,60 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-function sum(int $a,int $b): int {
-    return $a+$b;
+//рекурсия - функция вызывает саму себя
+function recuriya($counter){
+    if ($counter > 0){
+        echo ($counter--)."<br>";
+        recuriya($counter);
+    }else return;
 }
+recuriya(8);
 
-echo sum(2,3);
-
-function outArguments(...$items){//аргумент items рассматривается как массив
-    foreach ($items as $arg){
-        echo "$arg<br>";
+function outter(){
+    function inner(){
+        return "Hello World!";
     }
 }
-outArguments("PHP","JS","C++","Python");
+outter();
+echo inner();
 
-function outArgument($a,$b,$c,$d){
-    echo "$a<br>";
-    echo "$b<br>";
-    echo "$c<br>";
-    echo "$d<br>";
+function first(){
+    return  "First function";
 }
-$item  = ["PHP","JS","C++","Python"];
-outArgument(...$item);
-
-function sums(){
-    global $var;
-    $var=2;
-    return $var;
+function second(){
+    return "Second function";
 }
 
-$var = 6;
-echo sums();
-echo "<br>$var<br>";
+$newFunction = rand(0,1) ? "first": "second";
 
-function statics(){
-    static $count=0; //за счет static данная переменная помнит свое предыдущее значение
-    return ++$count;
+echo $newFunction();
+class Point
+{
+    public $x; //public - доступна как снаржуи так и внутри
+    public $y;
 }
-echo statics()."<br>";
-echo statics()."<br>";
-echo statics()."<br>";
-echo statics()."<br>";
 
+$fst  = new Point();
+$fst ->x = 12;
+$fst ->y = 5;
 
+$snd = new Point();
+$snd->x = 1;
+$snd->y = 1;
 
+$thd= new Point();
+$thd->x = 4;
+$thd->y = 10;
 
-
+$arr = [$fst,$snd,$thd];
+usort($arr,function ($a,$b){
+   $dist_a = sqrt($a -> x**2+ $a -> y**2);
+   $dist_b = sqrt($b -> x**2+ $b -> y**2);
+   return $dist_a <=> $dist_b;
+});
+echo  "<pre>";
+print_r($arr);
+echo "/<pre>";
 
 ?>
 </body>
