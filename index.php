@@ -7,60 +7,31 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-//рекурсия - функция вызывает саму себя
-function recuriya($counter){
-    if ($counter > 0){
-        echo ($counter--)."<br>";
-        recuriya($counter);
-    }else return;
-}
-recuriya(8);
-
-function outter(){
-    function inner(){
-        return "Hello World!";
+//$message = "Text message";
+//$mFu = function () use  ($message){
+//    $message= "New";
+//    return $message;
+//};
+//echo $mFu();
+//echo "<br>";
+//echo $message;
+function odd(int $number){
+    if  ($number % 2 ==0){
+        return false;
+    }else{
+        return true;
     }
 }
-outter();
-echo inner();
+echo odd(5)."<br>";
 
-function first(){
-    return  "First function";
+function sum(...$items){
+    $sum = 0;
+    for ($i=0; $i<count($items); $i++){
+        $sum += $items[$i];
+    }
+    return $sum;
 }
-function second(){
-    return "Second function";
-}
-
-$newFunction = rand(0,1) ? "first": "second";
-
-echo $newFunction();
-class Point
-{
-    public $x; //public - доступна как снаржуи так и внутри
-    public $y;
-}
-
-$fst  = new Point();
-$fst ->x = 12;
-$fst ->y = 5;
-
-$snd = new Point();
-$snd->x = 1;
-$snd->y = 1;
-
-$thd= new Point();
-$thd->x = 4;
-$thd->y = 10;
-
-$arr = [$fst,$snd,$thd];
-usort($arr,function ($a,$b){
-   $dist_a = sqrt($a -> x**2+ $a -> y**2);
-   $dist_b = sqrt($b -> x**2+ $b -> y**2);
-   return $dist_a <=> $dist_b;
-});
-echo  "<pre>";
-print_r($arr);
-echo "/<pre>";
+echo sum(10,5,2,3,1);
 
 ?>
 </body>
