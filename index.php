@@ -8,37 +8,36 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-//class People{
-//    private $name;
-//    public function __construct(){
-//        echo  "Вызов конструктора";
-//        $this->name = "Ivan";
-//
-//
-//    }
-//}
-////$obj = new People();
-////echo "<pre>";
-////echo print_r($obj);
-////echo "</pre>";
-class Point
-{
-    private $x;
-    private $y;
-    public function __construct($x,$y){
-        $this->x = $x;
-        $this->y = $y;
-    }
-    public function __toString(){
-        return "({$this->x},{$this->y}) ";
+class Animal {
+    public  $legs = 4;
+    public  function info(){
+        echo "У меня {$this->legs} лапы.";
     }
 }
-$obj = new Point(10,20);
-echo "<pre>";
-echo print_r($obj);
-echo "</pre>";
 
-echo "{$obj}";
+class Dog extends  Animal {
+    public $name = "Собака";
+    public  function info(){ //переопределяем метод, называется перегрузкой
+        echo "Я собака. У меня {$this->legs} лапы.";
+    }
+    public function voice(){ //protected недоступен извне класса, но доступен при наследовании
+        echo "{$this->name} издает звук гав-гав.";
+    }
+}
+$dog = new Dog();
+$dog->info();
+$dog->voice();
+
+class Cat extends  Animal {
+    public $name = "Кошка";
+    public function voice(){
+        echo "{$this->name} издает звук мяу-мяу.";
+    }
+}
+$cat = new Cat();
+$cat->info();
+$cat->voice();
+
 
 
 
