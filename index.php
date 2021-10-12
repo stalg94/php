@@ -8,60 +8,40 @@
 </head>  <!-- comment ctrl+/ -->
 <body>
 <?php
-//class Hello {
-//    public  function printText(){
-//        return "Hello world!";
-//    }
-//}
-//$obj= new Hello();
-//echo $obj->printText();
-
-//class Point{
-//    private  $x;
-//    private  $y;
-//    public function setX($x){
-//        $this->x = $x;
-//    }
-//    public function setY($y){
-//        $this->y = $y;
-//    }
-//    public function getX(){
-//        return  $this->x;
-//    }
-//    public function getY(){
-//        return  $this->y;
-//    }
-//    public function distance(){
-//        return sqrt($this->getX()**2 + $this->getY()**2);
-//    }
-//}
-//$p1= new Point();
-//$p1->setX(5);
-//$p1->setY(7);
+//class People{
+//    private $name;
+//    public function __construct(){
+//        echo  "Вызов конструктора";
+//        $this->name = "Ivan";
 //
-//echo $p1->distance();
-//class Hello {
-//    public static function printText(){
-//        return "Hello world!";
+//
 //    }
 //}
-//echo Hello::printText(); //если статик, то переменная для вызова объекта класса не нужна
-
-class Page{
-    static $content = "Тело сайта<br>";
-    public static function footer(){
-        return "Это подвал сайта<br>";
+////$obj = new People();
+////echo "<pre>";
+////echo print_r($obj);
+////echo "</pre>";
+class Point
+{
+    private $x;
+    private $y;
+    public function __construct($x,$y){
+        $this->x = $x;
+        $this->y = $y;
     }
-    public static function header(){
-        return "Это шапка сайта<br>";
-    }
-    public static function site(){
-        echo self::header().//self используется чтобы сослаться на статическую переменную этого же класса
-            self::$content.
-            self::footer();
+    public function __toString(){
+        return "({$this->x},{$this->y}) ";
     }
 }
-Page::site();
+$obj = new Point(10,20);
+echo "<pre>";
+echo print_r($obj);
+echo "</pre>";
+
+echo "{$obj}";
+
+
+
 
 ?>
 
